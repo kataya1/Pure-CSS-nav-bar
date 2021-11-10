@@ -1,0 +1,127 @@
+* {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: inherit;
+    background-image: linear-gradient(to bottom right,#205072, #329d9c);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace;
+}
+nav{
+    /* background-image: linear-gradient(to right, #205072, #32d9c); */
+    color: white;
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    transition: 0.8s;
+    /* gap: 1vw; */
+    
+}
+
+p{
+    cursor: pointer;
+    padding:10px 20px;
+    font-size: larger;
+}
+
+.seconds > p, .thirds > p{
+    font-size: large;
+    padding: 10px 30px 10px 10px;
+}
+.firsts,.seconds{
+    position: relative;
+}
+/* .firsts > p:hover{
+    
+} */
+.firsts > p:hover + .seconds-wrapper, .seconds-wrapper:hover{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+.seconds-wrapper{
+    /* background-image: linear-gradient(to bottom right, #56c596,#329d9c); */
+    background-color: #0004;
+    visibility: hidden;
+    opacity: 0;
+    position:absolute;
+    top:100%;
+    flex-direction: column;
+    transition: 0.2s;
+    transform: translateY(10px);
+    z-index: 2;
+
+}
+
+.thirds-wrapper{
+    /* display: none; */
+    background-color: #0002;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 100%;
+    transition: 0.2s;
+    transform: translateX(14px);
+    /* border: 1px solid black; */
+    
+}
+
+.seconds > p:hover + .thirds-wrapper, .thirds-wrapper:hover{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.seconds{
+    /* background-image: linear-gradient(#454545,#656565); */
+    color: white;
+    border-bottom: 1px solid black;
+}
+.thirds{
+    /* background-image: radial-gradient(#ffdd94,#fa897b); */
+    color: white;
+    border-bottom: 1px solid black;
+}
+nav:hover{
+    box-shadow: 2px 5px 5px #0003;
+
+}
+
+.firsts:hover{
+    background-color: #0001;
+    /* color: black; */
+    /* font-weight: 700; */
+}
+.seconds:hover{
+    color: white;
+    font-weight: 600;
+    background-color: #0008 ;
+}
+.thirds:hover{
+    background-color: #0004;
+    /* background-image: radial-gradient(circle at bottom right,#ffdd94,#fa897b); */
+}
+
+
+article{
+    color: white;
+    padding: 10vh 10vw;
+    display: none;
+}
